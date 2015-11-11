@@ -16,6 +16,16 @@
     <h1>ZETA! numbers!</h1>
     <div class="container" ng-controller="WelcomeController">
 
+        <div class="inputForm">
+        <!--<form id="addPerson">-->
+            <input ng-model="info.name" type="text" placeholder="Enter Name">
+            <input ng-model="info.location" type="text" placeholder="Enter Location">
+            <input ng-model="info.number" type="text" placeholder="Enter Favorite Number">
+        <!--</form>-->
+            <button ng-click="postPeople(info)" class="btn btn-primary">Add Entry</button>
+
+        </div>
+
         <button class="sort-name btn btn-info" ng-click="order('name', false)">Sort By Name</button>
         <button class="sort-name btn btn-warning" ng-click="order('location', false)">Sort By Location</button>
         <button class="sort-name btn btn-success" ng-click="reverse=!reverse;order('number', reverse)">Sort By Favorite Number</button>

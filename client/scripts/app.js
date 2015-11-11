@@ -1,5 +1,6 @@
 var myApp = angular.module("myApp", []);
 myApp.controller('WelcomeController', ['$scope', '$http', '$filter', function($scope, $http, $filter){
+    $scope.info = {};
     $scope.peopleArray = [];
     var orderBy = $filter('orderBy');
 
@@ -13,6 +14,14 @@ myApp.controller('WelcomeController', ['$scope', '$http', '$filter', function($s
 
     $scope.order = function(predicate, reverse){
         $scope.peopleArray = orderBy($scope.peopleArray, predicate, reverse);
+    };
+
+    $scope.postPeople = function(kittyFoo){
+        $http.post('/data', kittyFoo).then(function(response){
+
+            $scope.info = {};
+            $scope.getPeople();
+        });
     };
 
 }]);
