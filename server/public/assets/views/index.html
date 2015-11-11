@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+
+</head>
+<body>
+
+    <h1>ZETA! numbers!</h1>
+    <div class="container" ng-controller="WelcomeController">
+
+        <button class="sort-name btn btn-info" ng-click="order('name', false)">Sort By Name</button>
+        <button class="sort-name btn btn-warning" ng-click="order('location', false)">Sort By Location</button>
+        <button class="sort-name btn btn-success" ng-click="reverse=!reverse;order('number', reverse)">Sort By Favorite Number</button>
+
+        <div class="people-container" ng-repeat="people in peopleArray">
+            <zeta-info info="people"></zeta-info>
+        </div>
+
+    </div>
+
+</body>
+</html>

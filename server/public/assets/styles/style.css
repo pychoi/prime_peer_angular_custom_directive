@@ -1,0 +1,20 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.person-container {
+    padding: 10px 20px;
+}
+
+.people-container:nth-child(odd){
+    background-color: lightgrey;
+}
+
+.sort-name{
+    margin: 30px 10px;
+}
