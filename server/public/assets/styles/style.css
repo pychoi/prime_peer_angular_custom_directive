@@ -6,6 +6,7 @@ p {
 
 h1 {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .person-container {
@@ -16,11 +17,22 @@ h1 {
     background-color: lightgrey;
 }
 
-.sort-name{
+.sort{
     margin: 30px 10px;
 }
 
 .delete-button-container {
     display:inline-block;
     float:right;
+    margin-top: -5px;
+}
+
+.sort-order:after {
+    visibility: visible;
+    content: '\25bc';
+}
+
+.sort-order.reverse:after {
+    visibility: visible;
+    content: '\25b2';
 }

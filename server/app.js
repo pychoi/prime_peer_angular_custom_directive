@@ -43,6 +43,15 @@ app.get("/*", function(req,res,next){
     res.sendFile(path.join(__dirname, "./public/", file))
 });
 
+app.delete('/data', function(req,res){
+    Person.findByIdAndRemove({"_id" : req.query.id}, function(err, data){
+        if(err) console.log(err);
+        res.send(data);
+    });
+
+
+});
+
 app.listen(app.get('port'), function(){
     console.log("Listening to port", app.get('port'));
 });

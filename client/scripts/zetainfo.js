@@ -1,9 +1,10 @@
 myApp.directive('zetaInfo',
   function(){
       return {
-          restrict: "E",
+          restrict: "AE",
           scope: {
-              info: "="
+              info: "=",
+              action: '&'
           },
           templateUrl: "assets/views/zetainfo.html"
       }

@@ -14,12 +14,20 @@ myApp.controller('WelcomeController', ['$scope', '$http', '$filter', function($s
 
     $scope.order = function(predicate, reverse){
         $scope.peopleArray = orderBy($scope.peopleArray, predicate, reverse);
+        $scope.predicate = predicate;
     };
 
     $scope.postPeople = function(kittyFoo){
         $http.post('/data', kittyFoo).then(function(response){
 
             $scope.info = {};
+            $scope.getPeople();
+        });
+    };
+
+    $scope.deletePerson = function(info){
+        console.log(info);
+        $http.delete('/data', {params: {id: info.param}}).then(function(response){
             $scope.getPeople();
         });
     };

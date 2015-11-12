@@ -26,12 +26,16 @@
 
         </div>
 
-        <button class="sort-name btn btn-info" ng-click="order('name', false)">Sort By Name</button>
-        <button class="sort-name btn btn-warning" ng-click="order('location', false)">Sort By Location</button>
-        <button class="sort-name btn btn-success" ng-click="reverse=!reverse;order('number', reverse)">Sort By Favorite Number</button>
+        <button class="sort btn btn-info" ng-click="reverse=!reverse;order('-name', reverse)">Sort By Name<span class="sort-order" ng-show="predicate == '-name'" ng-class="{reverse:reverse}"></span></button>
+        <button class="sort btn btn-warning" ng-click="reverse=!reverse;order('-location', reverse)">Sort By Location<span class="sort-order" ng-show="predicate == '-location'" ng-class="{reverse:reverse}"></span></button>
+        <button class="sort btn btn-success" ng-click="reverse=!reverse;order('-number', reverse)">Sort By Favorite Number<span class="sort-order" ng-show="predicate == '-number'" ng-class="{reverse:reverse}"></span></button>
+        <button class="sort btn btn-default" ng-click="order('_id', false)">Reset</button>
 
         <div class="people-container" ng-repeat="people in peopleArray">
-            <zeta-info info="people"></zeta-info>
+            <!--<div class="delete-button-container">-->
+                <!--<button class="delete btn btn-danger" ng-click="deletePerson(people._id)">Delete</button>-->
+            <!--</div>-->
+            <zeta-info info="people" action="deletePerson({param: people._id})"></zeta-info>
         </div>
 
     </div>
